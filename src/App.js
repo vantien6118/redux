@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React, { Component } from "react";
+import Header from './components/Header';
+import Footer from './components/Footer'
+import ProductContainer from './containers/ProductContainer'
+import CartContainer from "./containers/CartContainer";
+import MessageContainer from "./containers/MessageContainer";
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <div>
+          {/* Header */}
+          <Header/>
+          <main id="mainContainer">
+            <div className="container">
+              {/* Products */}
+            <ProductContainer/>
+             {/* Message */}
+             <MessageContainer/>
+              {/* Cart */}
+              <CartContainer/>
+            </div>
+          </main>
+          {/* Footer */}
+          <Footer/>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
